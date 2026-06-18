@@ -2,7 +2,7 @@
 title: "TÍTULO DO PROJETO DE PESQUISA"
 author: "NOME COMPLETO"
 date: "2026"
-format: ppgens-univasf
+format: ppgens-univasf-projeto
 projeto-type: "Fundamentos Teóricos e Metodológicos da Pesquisa"
 orientador: "Prof. Dr. XXXXXXXXXXXXXX"
 area-concentracao: "Ensino e Práticas de Formação Docente no Semiárido"

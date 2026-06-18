@@ -1,6 +1,9 @@
-# PPGENS-UNIVASF
+# PPGENS-UNIVASF — Projeto de Mestrado (Turma 2026)
 
-Modelo oficial do **Programa de Pós-Graduação em Ensino (PPGENS)** da **Universidade Federal do Vale do São Francisco (UNIVASF)** — Campus Senhor do Bonfim (BA).
+Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em Ensino (PPGENS)** da **Universidade Federal do Vale do São Francisco (UNIVASF)** — Campus Senhor do Bonfim (BA).
+
+> **Última atualização:** 2026, conforme modelo da turma 2026.
+> **Tipo de documento:** Projeto de Pesquisa para avaliação de componente curricular.
 
 ## Estrutura do documento
 

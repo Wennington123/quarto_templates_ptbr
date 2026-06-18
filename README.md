@@ -9,9 +9,14 @@ Repositório de formatos customizados do [Quarto](https://quarto.org) para traba
 
 ## 📦 Extensões disponíveis
 
-| Extensão | Instituição | Programa | Documento |
-|----------|-------------|----------|-----------|
-| [`ppgens-univasf`](./_extensions/ppgens-univasf/) | UNIVASF | PPGENS | Projeto de Pesquisa / Qualificação / Dissertação |
+| Extensão | Instituição | Programa | Documento | Ano |
+|----------|-------------|----------|-----------|-----|
+| [`ppgens-univasf-projeto`](./_extensions/ppgens-univasf-projeto/) | UNIVASF | PPGENS | **Projeto de Mestrado** | 2026 |
+
+**Legenda dos tipos de documento:**
+- **Projeto** — Projeto de pesquisa submetido como avaliação de componente curricular
+- **Qualificação** — Texto para exame de qualificação (em breve)
+- **Dissertação** — Texto final de defesa (em breve)
 
 ---
 
@@ -39,10 +44,10 @@ Após instalar, use o formato no YAML do seu documento `.qmd`:
 
 ```yaml
 ---
-title: "TÍTULO DO TRABALHO"
+title: "TÍTULO DO PROJETO DE PESQUISA"
 author: "Seu Nome"
 date: "2026"
-format: ppgens-univasf
+format: ppgens-univasf-projeto
 projeto-type: "Fundamentos Teóricos e Metodológicos da Pesquisa"
 orientador: "Prof. Dr. Nome do Orientador"
 area-concentracao: "Ensino e Práticas de Formação Docente no Semiárido"
@@ -54,10 +59,10 @@ abstract: "Resumo do trabalho..."
 
 | Campo | Descrição |
 |-------|-----------|
-| `projeto-type` | Nome do componente curricular (projetos) |
+| `projeto-type` | Nome do componente curricular |
 | `orientador` | Nome do(a) orientador(a) |
 | `area-concentracao` | Área de concentração do programa |
-| `doc-type` | Tipo de documento: "Dissertação" ou "Tese" (qualificação/defesa) |
+| `doc-type` | Tipo de documento: `Dissertação` (para qualificação/defesa) |
 | `dedicatoria` | Texto da dedicatória |
 | `agradecimentos` | Texto dos agradecimentos |
 | `epigrafe` | Texto da epígrafe |
@@ -66,7 +71,7 @@ abstract: "Resumo do trabalho..."
 ### Renderizar
 
 ```bash
-quarto render documento.qmd --to ppgens-univasf
+quarto render documento.qmd --to ppgens-univasf-projeto
 ```
 
 ---
@@ -92,15 +97,16 @@ sudo apt install fonts-libertinus
 ```
 quarto_templates_ptbr/
 ├── _extensions/
-│   └── ppgens-univasf/        # Extensão Quarto do PPGENS
-│       ├── _extension.yml     # Definição do formato
-│       └── partials/          # Templates LaTeX
-│           ├── title.tex      # Capa e folha de rosto
-│           └── before-body.tex # Elementos pré-textuais
-├── templates-universitarios/  # Documentação das regras de cada template
+│   └── ppgens-univasf-projeto/    # Extensão para Projeto de Mestrado
+│       ├── _extension.yml         # Definição do formato PDF
+│       └── partials/              # Templates LaTeX
+│           ├── title.tex          # Capa e folha de rosto
+│           └── before-body.tex     # Elementos pré-textuais
+├── templates-universitarios/      # Documentação das regras de cada template
 │   └── ppgens-univasf/
-│       └── README.md          # Especificações ABNT e estrutura
-├── template.qmd               # Template de exemplo
+│       └── projeto/
+│           └── README.md          # Especificações ABNT e estrutura
+├── template.qmd                   # Template de exemplo
 ├── LICENSE
 └── README.md
 ```
@@ -112,8 +118,8 @@ quarto_templates_ptbr/
 Quer adicionar o template da sua universidade?
 
 1. Faça um fork do repositório
-2. Crie a extensão em `_extensions/sua-universidade/`
-3. Documente as regras em `templates-universitarios/sua-universidade/`
+2. Crie a extensão em `_extensions/universidade-tipo/`
+3. Documente as regras em `templates-universitarios/universidade/tipo/`
 4. Abra um Pull Request
 
 ---
