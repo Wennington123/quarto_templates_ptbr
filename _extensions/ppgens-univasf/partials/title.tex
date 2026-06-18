@@ -1,0 +1,98 @@
+$if(title)$
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+
+{\MakeUppercase{\large\bfseries Universidade Federal do Vale do São Francisco}}
+
+\vspace{1cm}
+
+{\MakeUppercase{\large\bfseries Programa de Pós-Graduação em Ensino}}
+
+\vspace{0.5cm}
+
+{\MakeUppercase{\large\bfseries Mestrado Acadêmico em Ensino}}
+
+\vspace{0.5cm}
+
+{\MakeUppercase{\large\bfseries Campus Senhor do Bonfim}}
+
+\vspace{3cm}
+
+{\Large\bfseries\MakeUppercase{$author$}}
+
+\vspace{5cm}
+
+{\Large\bfseries\MakeUppercase{$title$}}
+
+\vfill
+
+{\large\MakeUppercase{Senhor do Bonfim (BA)}}
+
+\vspace{0.5cm}
+
+{\large $date$}
+
+\end{center}
+\end{titlepage}
+
+\begin{titlepage}
+\thispagestyle{empty}
+\begin{center}
+
+{\Large\bfseries\MakeUppercase{$author$}}
+
+\vspace{4cm}
+
+{\Large\bfseries\MakeUppercase{$title$}}
+
+\vspace{2cm}
+\end{center}
+
+\begin{flushright}
+\begin{minipage}{0.5\textwidth}
+$if(projeto-type)$
+$if(orientador)$
+Projeto de Pesquisa apresentado como instrumento de avaliação do componente curricular $projeto-type$ ofertado no Programa de Pós-Graduação em Ensino (PPGENS) da Universidade Federal do Vale do São Francisco (UNIVASF).
+
+\vspace{1cm}
+
+{\bfseries Orientador(a):} $orientador$
+$endif$
+
+\vspace{1cm}
+
+$if(area-concentracao)$
+{\bfseries Área de concentração:} $area-concentracao$
+$endif$
+$else$
+$if(orientador)$
+$if(doc-type)$
+$doc-type$ apresentada ao Programa de Pós-Graduação em Ensino (PPGENS) da Universidade Federal do Vale do São Francisco (UNIVASF), como requisito parcial para obtenção do título de Mestre em Ensino.
+
+\vspace{1cm}
+
+{\bfseries Orientador(a):} $orientador$
+$endif$
+$endif$
+
+\vspace{1cm}
+
+$if(area-concentracao)$
+{\bfseries Área de concentração:} $area-concentracao$
+$endif$
+$endif$
+\end{minipage}
+\end{flushright}
+
+\vfill
+
+\begin{center}
+{\large\MakeUppercase{Senhor do Bonfim (BA)}}
+
+\vspace{0.5cm}
+
+{\large $date$}
+\end{center}
+\end{titlepage}
+$endif$
