@@ -1,20 +1,11 @@
-# Quarto Templates — Universidades Brasileiras 🇧🇷
+# Quarto Templates — Periódicos e Universidades Brasileiras 🇧🇷
 
 [![Quarto](https://img.shields.io/badge/Quarto-%3E%3D1.6.0-blue)](https://quarto.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos em universidades brasileiras, seguindo as normas ABNT e os requisitos de cada programa de pós-graduação.
+Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos em periódicos e universidades brasileiras.
 
 ---
-
-## 📦 Extensões disponíveis
-
-| Extensão | Instituição | Programa | Documento | Ano |
-|----------|-------------|----------|-----------|-----|
-| [`ppgens-univasf-projeto`](./_extensions/ppgens-univasf-projeto/) | UNIVASF | PPGENS | Projeto de Mestrado | 2026 |
-
-> Consulte o README de cada template em `templates-universitarios/` para instruções específicas.
-
 ---
 
 ## 📋 Instalação
