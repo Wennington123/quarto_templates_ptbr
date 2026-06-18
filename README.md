@@ -15,25 +15,53 @@ Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos
 
 ---
 
-## 🚀 Instalação
+## 🚀 Como usar
+
+Você pode usar este formato de duas maneiras.
+
+### Opção A: template (recomendado para começar um trabalho novo)
+
+Cria uma pasta limpa com tudo pronto para editar e renderizar:
+
+1. Abra o terminal no diretório onde quer criar o projeto
+2. Execute:
 
 ```bash
 quarto use template Wennington123/quarto_templates_ptbr
 ```
 
-Isso cria uma pasta com o template pronto pra editar.
+3. O Quarto vai pedir um nome para a pasta. Digite e pressione Enter
+4. Abra a pasta no RStudio:
 
----
+```
+File → Open Project → selecione o arquivo .Rproj
+```
 
-## ✍️ Como usar
+5. Edite o `.qmd` — o arquivo já vem com o esqueleto completo do template
 
-### 1. Abra o projeto no RStudio
+### Opção B: extensão (para adicionar a um projeto que já existe)
 
-Duplo clique no arquivo `.qmd` ou `File → Open Project`.
+Se você já tem um projeto Quarto em andamento:
 
-> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
+1. No terminal, dentro da pasta do seu projeto:
 
-### 2. Preencha o cabeçalho YAML
+```bash
+quarto add Wennington123/quarto_templates_ptbr
+```
+
+2. No YAML do seu `.qmd`, defina o formato:
+
+```yaml
+format: ppgens-univasf-projeto
+```
+
+3. Abra no RStudio, edite e clique em **Render**
+
+> A extensão instala apenas o formato em `_extensions/`. Ela não inclui o template de exemplo (`template.qmd`). Para começar do zero, use a **Opção A**.
+
+> **Dica:** Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
+
+### Exemplo de cabeçalho YAML
 
 ```yaml
 ---
@@ -47,9 +75,9 @@ abstract: "Resumo do trabalho..."
 ---
 ```
 
-### 3. Renderize
+### Renderizar
 
-Clique em **Render** no RStudio, ou no terminal:
+No RStudio, clique em **Render**. Ou no terminal:
 
 ```bash
 quarto render documento.qmd --to ppgens-univasf-projeto
