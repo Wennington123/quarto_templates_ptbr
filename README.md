@@ -23,8 +23,6 @@ Antes de usar qualquer template, instale as dependências uma única vez.
 
 ### Passo 1 — Quarto CLI
 
-### Passo 1 — Quarto CLI
-
 Baixe o instalador em [quarto.org/docs/get-started](https://quarto.org/docs/get-started/):
 
 | SO | Arquivo |
