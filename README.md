@@ -76,53 +76,7 @@ fc-list | grep -i libertinus  # fontes instaladas
 Tudo é feito de dentro do RStudio.
 
 > Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
-
-### Template (trabalho novo)
-
-1. Abra o RStudio
-2. No menu `Tools → Terminal`, execute o comando do template desejado. No geral:
-
-```bash
-quarto use template <org>/<repo>
-```
-
-O Quarto pede um nome para a pasta. Depois, no RStudio: `File → Open Project` e selecione o `.Rproj` criado.
-
-O `.qmd` já vem com o esqueleto completo — é só editar e clicar em **Render**.
-
-### Extensão (projeto existente)
-
-Se você já tem um projeto Quarto aberto no RStudio:
-
-1. No `Tools → Terminal`:
-
-```bash
-quarto add <org>/<repo>
-```
-
-2. No YAML do seu `.qmd`, defina o `format` correspondente
-3. Clique em **Render**
-
----
-
-## 📁 Estrutura do repositório
-
-```
-quarto_templates_ptbr/
-├── _extensions/                   # Extensões Quarto
-│   └── <universidade>-<tipo>/
-│       ├── _extension.yml
-│       ├── abnt.csl
-│       └── partials/
-├── templates-universitarios/      # Documentação de cada template
-│   └── <universidade>/
-│       └── <tipo>/
-│           └── README.md
-├── template.qmd
-├── LICENSE
-└── README.md
-```
-
+> *colocar o passo a passo
 ---
 
 ## 🤝 Contribuindo
