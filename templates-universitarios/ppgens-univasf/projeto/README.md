@@ -87,15 +87,9 @@ Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages o
 
 ---
 
-## Editores compatíveis
+## Editor recomendado: RStudio
 
-O formato é agnóstico ao editor. Você pode editar `.qmd` com:
-
-- **RStudio** — preview integrado, chunks R nativos
-- **VS Code** + [extensão Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
-- **Positron** — preview integrado
-- **Neovim** + [quarto-nvim](https://github.com/quarto-dev/quarto-nvim)
-- **Terminal** — editar com qualquer editor, renderizar com `quarto render`
+> Optamos pelo RStudio por acreditarmos ser o ambiente mais eficiente para editar e renderizar documentos Quarto — oferece preview integrado, suporte nativo a chunks R, e unifica toda a pipeline de renderização em um único ambiente.
 
 ---
 

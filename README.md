@@ -80,8 +80,6 @@ quarto render documento.qmd --to ppgens-univasf-projeto
 
 ### ① Quarto CLI
 
-O Quarto pode ser usado com **qualquer editor** — RStudio, VS Code, Positron, Neovim, ou até no terminal. O `quarto render` é só uma linha de comando.
-
 | SO | Instalação |
 |----|-----------|
 | **Fedora** | Baixar `.rpm` em [quarto.org/docs/get-started](https://quarto.org/docs/get-started/) |
@@ -118,22 +116,18 @@ brew install --cask mactex-no-gui
 #### Windows
 Baixar [MiKTeX](https://miktex.org/download) ou [TeX Live](https://tug.org/texlive/windows.html). Durante a instalação, marcar "Install missing packages on the fly".
 
-### ③ R e RStudio (opcional — para análise de dados)
+### ③ R e RStudio
 
-Se seu projeto envolve análises estatísticas com `.qmd`, instale o R:
+> **Recomendação:** optamos pelo RStudio por acreditarmos ser o ambiente mais eficiente para trabalhar com documentos Quarto — preview integrado, suporte nativo a chunks R, e toda a pipeline de renderização unificada.
 
-| SO | Instalação |
-|----|-----------|
-| **Fedora** | `sudo dnf install R` |
-| **Ubuntu** | `sudo apt install r-base` |
-| **macOS** | Baixar [CRAN .pkg](https://cran.r-project.org/bin/macosx/) |
-| **Windows** | Baixar [CRAN .exe](https://cran.r-project.org/bin/windows/base/) |
+Instale o R primeiro, depois o RStudio:
 
-RStudio é opcional — você pode editar `.qmd` com o editor que preferir:
-- [RStudio Desktop](https://posit.co/download/rstudio-desktop/) (mais amigável pra R)
-- [VS Code](https://code.visualstudio.com/) + extensão [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
-- [Positron](https://github.com/posit-dev/positron)
-- Neovim + [quarto-nvim](https://github.com/quarto-dev/quarto-nvim)
+| SO | R | RStudio |
+|----|---|---------|
+| **Fedora** | `sudo dnf install R` | Baixar `.rpm` em [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/) |
+| **Ubuntu** | `sudo apt install r-base` | Baixar `.deb` no mesmo link |
+| **macOS** | [CRAN .pkg](https://cran.r-project.org/bin/macosx/) | `brew install --cask rstudio` |
+| **Windows** | [CRAN .exe](https://cran.r-project.org/bin/windows/base/) | Baixar `.exe` no mesmo link |
 
 ### ④ Pacotes R necessários (se usar chunks R)
 
