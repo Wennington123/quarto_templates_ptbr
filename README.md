@@ -17,43 +17,11 @@ Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos
 
 ---
 
-## 🚀 Como usar
+## 📋 Instalação
 
-Cada template pode ser usado de duas formas.
+Antes de usar qualquer template, instale as dependências uma única vez.
 
-### Opção A: template (trabalho novo)
-
-Cria uma pasta nova com tudo pronto — o comando está no README do template desejado. No geral:
-
-```bash
-quarto use template <org>/<repo>
-```
-
-O Quarto pede um nome para a pasta. Depois, abra no RStudio (`File → Open Project`) e edite o `.qmd`.
-
-### Opção B: extensão (projeto existente)
-
-Adiciona apenas o formato a um projeto que você já tem:
-
-```bash
-quarto add <org>/<repo>
-```
-
-Depois defina o `format` correspondente no YAML e clique em **Render**.
-
-> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
-
-### Renderizar
-
-No RStudio, clique em **Render**. Ou no terminal:
-
-```bash
-quarto render documento.qmd --to <formato>
-```
-
----
-
-## 📋 Setup inicial (faça uma vez)
+### Passo 1 — Quarto CLI
 
 ### Passo 1 — Quarto CLI
 
@@ -104,6 +72,30 @@ lualatex --version        # funciona
 kpsewhich abntex2-alf.bst # retorna caminho
 fc-list | grep -i libertinus  # fontes instaladas
 ```
+
+---
+
+## 🚀 Como usar
+
+Cada template pode ser usado de duas formas. Consulte o README do template desejado para os comandos específicos.
+
+### Template (trabalho novo)
+
+```bash
+quarto use template <org>/<repo>
+```
+
+O Quarto pede um nome para a pasta. Abra o `.Rproj` no RStudio e edite o `.qmd`.
+
+### Extensão (projeto existente)
+
+```bash
+quarto add <org>/<repo>
+```
+
+Depois defina o `format` no YAML e clique em **Render**.
+
+> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
 
 ---
 

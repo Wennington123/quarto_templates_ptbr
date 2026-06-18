@@ -7,7 +7,9 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 
 ---
 
-## Instalação
+## Como usar
+
+> Antes de começar, execute os passos de [instalação](../../../README.md#-instalação) uma única vez.
 
 ### Template (trabalho novo)
 
@@ -15,7 +17,7 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 quarto use template Wennington123/quarto_templates_ptbr
 ```
 
-O Quarto pede um nome para a pasta. Depois abra o `.Rproj` no RStudio — o `.qmd` já vem com o esqueleto completo do projeto de pesquisa.
+O Quarto pede um nome para a pasta. Abra o `.Rproj` no RStudio — o `.qmd` já vem com o esqueleto completo.
 
 ### Extensão (projeto existente)
 
