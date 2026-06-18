@@ -13,23 +13,32 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 
 ### Template (trabalho novo)
 
+1. Abra o RStudio
+2. No menu `Tools → Terminal`, execute:
+
 ```bash
 quarto use template Wennington123/quarto_templates_ptbr
 ```
 
-O Quarto pede um nome para a pasta. Abra o `.Rproj` no RStudio — o `.qmd` já vem com o esqueleto completo.
+3. O Quarto pede um nome para a pasta — digite e pressione Enter
+4. No RStudio: `File → Open Project` e selecione o `.Rproj` criado
+5. O `.qmd` já vem com o esqueleto completo. Edite e clique em **Render**
 
 ### Extensão (projeto existente)
+
+1. Com seu projeto aberto no RStudio, vá em `Tools → Terminal`:
 
 ```bash
 quarto add Wennington123/quarto_templates_ptbr
 ```
 
-Depois defina no YAML:
+2. No YAML do seu `.qmd`, defina:
 
 ```yaml
 format: ppgens-univasf-projeto
 ```
+
+3. Clique em **Render**
 
 ### Exemplo de cabeçalho
 
@@ -43,14 +52,6 @@ orientador: "Prof. Dr. Nome do Orientador"
 area-concentracao: "Ensino e Práticas de Formação Docente no Semiárido"
 abstract: "Resumo do trabalho..."
 ---
-```
-
-### Renderizar
-
-No RStudio, clique em **Render**. Ou no terminal:
-
-```bash
-quarto render documento.qmd --to ppgens-univasf-projeto
 ```
 
 ---

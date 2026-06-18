@@ -13,7 +13,7 @@ Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos
 |----------|-------------|----------|-----------|-----|
 | [`ppgens-univasf-projeto`](./_extensions/ppgens-univasf-projeto/) | UNIVASF | PPGENS | Projeto de Mestrado | 2026 |
 
-> Consulte o README de cada template em `templates-universitarios/` para instruções específicas de instalação e uso.
+> Consulte o README de cada template em `templates-universitarios/` para instruções específicas.
 
 ---
 
@@ -31,10 +31,6 @@ Baixe o instalador em [quarto.org/docs/get-started](https://quarto.org/docs/get-
 | Ubuntu / Debian | `.deb` |
 | macOS | `brew install --cask quarto` |
 | Windows | `.msi` |
-
-```bash
-quarto --version   # precisa ser ≥ 1.6.0
-```
 
 ### Passo 2 — LaTeX + fontes
 
@@ -64,6 +60,8 @@ install.packages(c("knitr", "rmarkdown"))
 
 ### Verificação rápida
 
+No terminal do RStudio (`Tools → Terminal`):
+
 ```bash
 quarto --version          # ≥ 1.6.0
 lualatex --version        # funciona
@@ -75,25 +73,35 @@ fc-list | grep -i libertinus  # fontes instaladas
 
 ## 🚀 Como usar
 
-Cada template pode ser usado de duas formas. Consulte o README do template desejado para os comandos específicos.
+Tudo é feito de dentro do RStudio.
+
+> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
 
 ### Template (trabalho novo)
+
+1. Abra o RStudio
+2. No menu `Tools → Terminal`, execute o comando do template desejado. No geral:
 
 ```bash
 quarto use template <org>/<repo>
 ```
 
-O Quarto pede um nome para a pasta. Abra o `.Rproj` no RStudio e edite o `.qmd`.
+O Quarto pede um nome para a pasta. Depois, no RStudio: `File → Open Project` e selecione o `.Rproj` criado.
+
+O `.qmd` já vem com o esqueleto completo — é só editar e clicar em **Render**.
 
 ### Extensão (projeto existente)
+
+Se você já tem um projeto Quarto aberto no RStudio:
+
+1. No `Tools → Terminal`:
 
 ```bash
 quarto add <org>/<repo>
 ```
 
-Depois defina o `format` no YAML e clique em **Render**.
-
-> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
+2. No YAML do seu `.qmd`, defina o `format` correspondente
+3. Clique em **Render**
 
 ---
 
