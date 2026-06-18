@@ -54,7 +54,7 @@ Modelo oficial do **Programa de Pós-Graduação em Ensino (PPGENS)** da **Unive
 
 ## Observações
 
-- Redação em linguagem acadêmica, impessoal (evitar 1ª pessoa)
+- Redação em linguagem acadêmica, impessoal (evitar 1ª pessoa; a menos que seu orientador faça a sugestão de optar pela 3ª pessoa)
 - Texto contínuo e articulado (exceto objetivos e cronograma)
 - Problema de pesquisa em forma de **pergunta clara e objetiva**
 - Referências em ordem alfabética, sem numeração
