@@ -3,7 +3,7 @@
 [![Quarto](https://img.shields.io/badge/Quarto-%3E%3D1.6.0-blue)](https://quarto.org)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-Repositório de formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos em universidades brasileiras. Cada extensão implementa as regras de formatação ABNT e os requisitos específicos de cada programa de pós-graduação.
+Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos em universidades brasileiras, seguindo as normas ABNT e os requisitos de cada programa de pós-graduação.
 
 ---
 
@@ -11,64 +11,45 @@ Repositório de formatos customizados do [Quarto](https://quarto.org) para traba
 
 | Extensão | Instituição | Programa | Documento | Ano |
 |----------|-------------|----------|-----------|-----|
-| [`ppgens-univasf-projeto`](./_extensions/ppgens-univasf-projeto/) | UNIVASF | PPGENS | **Projeto de Mestrado** | 2026 |
-
-**Legenda dos tipos de documento:**
-- **Projeto** — Projeto de pesquisa submetido como avaliação de componente curricular
-- **Qualificação** — Texto para exame de qualificação (em breve)
-- **Dissertação** — Texto final de defesa (em breve)
+| [`ppgens-univasf-projeto`](./_extensions/ppgens-univasf-projeto/) | UNIVASF | PPGENS | Projeto de Mestrado | 2026 |
 
 ---
 
 ## 🚀 Instalação
 
-### Como template (recomendado para começar um novo projeto)
-
-Cria uma pasta com o template pronto para editar:
-
 ```bash
 quarto use template Wennington123/quarto_templates_ptbr
 ```
 
-### Como extensão (adiciona o formato a um projeto existente)
-
-```bash
-quarto add Wennington123/quarto_templates_ptbr
-```
+Isso cria uma pasta com o template pronto pra editar.
 
 ---
 
-## ✍️ Uso
+## ✍️ Como usar
 
-Após instalar, use o formato no YAML do seu documento `.qmd`:
+### 1. Abra o projeto no RStudio
+
+Duplo clique no arquivo `.qmd` ou `File → Open Project`.
+
+> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
+
+### 2. Preencha o cabeçalho YAML
 
 ```yaml
 ---
-title: "TÍTULO DO PROJETO DE PESQUISA"
+title: "TÍTULO DO TRABALHO"
 author: "Seu Nome"
 date: "2026"
 format: ppgens-univasf-projeto
-projeto-type: "Fundamentos Teóricos e Metodológicos da Pesquisa"
 orientador: "Prof. Dr. Nome do Orientador"
-area-concentracao: "Ensino e Práticas de Formação Docente no Semiárido"
+area-concentracao: "Sua área de concentração"
 abstract: "Resumo do trabalho..."
 ---
 ```
 
-### Campos YAML específicos do PPGENS-UNIVASF
+### 3. Renderize
 
-| Campo | Descrição |
-|-------|-----------|
-| `projeto-type` | Nome do componente curricular |
-| `orientador` | Nome do(a) orientador(a) |
-| `area-concentracao` | Área de concentração do programa |
-| `doc-type` | Tipo de documento: `Dissertação` (para qualificação/defesa) |
-| `dedicatoria` | Texto da dedicatória |
-| `agradecimentos` | Texto dos agradecimentos |
-| `epigrafe` | Texto da epígrafe |
-| `folha-aprovacao` | Caminho para PDF da folha de aprovação |
-
-### Renderizar
+Clique em **Render** no RStudio, ou no terminal:
 
 ```bash
 quarto render documento.qmd --to ppgens-univasf-projeto
@@ -76,81 +57,56 @@ quarto render documento.qmd --to ppgens-univasf-projeto
 
 ---
 
-## 📋 Requisitos e Setup por Sistema Operacional
+## 📋 Setup inicial (faça uma vez)
 
-### ① Quarto CLI
+### Passo 1 — Quarto CLI
 
-| SO | Instalação |
-|----|-----------|
-| **Fedora** | Baixar `.rpm` em [quarto.org/docs/get-started](https://quarto.org/docs/get-started/) |
-| **Ubuntu/Debian** | Baixar `.deb` na mesma página |
-| **macOS** | `brew install --cask quarto` |
-| **Windows** | Baixar `.msi` na mesma página |
+Baixe o instalador em [quarto.org/docs/get-started](https://quarto.org/docs/get-started/):
 
-Verifique:
+| SO | Arquivo |
+|----|---------|
+| Fedora | `.rpm` |
+| Ubuntu / Debian | `.deb` |
+| macOS | `brew install --cask quarto` |
+| Windows | `.msi` |
+
 ```bash
-quarto --version  # deve ser ≥ 1.6.0
+quarto --version   # precisa ser ≥ 1.6.0
 ```
 
-### ② LaTeX (LuaLaTeX)
+### Passo 2 — LaTeX + fontes
 
-Necessário para gerar PDF. O Quarto usa Pandoc + LuaLaTeX por trás.
+| SO | Comando |
+|----|---------|
+| **Fedora** | `sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2` |
+| **Ubuntu / Debian** | `sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese fonts-libertinus` |
+| **macOS** | `brew install --cask mactex-no-gui`<br>`sudo tlmgr install libertinus abntex2` |
+| **Windows** | Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages on the fly". |
 
-#### Fedora
-```bash
-sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2
-```
-
-#### Ubuntu / Debian
-```bash
-sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese
-sudo apt install fonts-libertinus
-```
-
-#### macOS
-```bash
-brew install --cask mactex-no-gui
-# Depois: sudo tlmgr install libertinus abntex2
-```
-
-#### Windows
-Baixar [MiKTeX](https://miktex.org/download) ou [TeX Live](https://tug.org/texlive/windows.html). Durante a instalação, marcar "Install missing packages on the fly".
-
-### ③ R e RStudio
-
-> **Recomendação:** optamos pelo RStudio por acreditarmos ser o ambiente mais eficiente para trabalhar com documentos Quarto — preview integrado, suporte nativo a chunks R, e toda a pipeline de renderização unificada.
-
-Instale o R primeiro, depois o RStudio:
+### Passo 3 — R e RStudio
 
 | SO | R | RStudio |
 |----|---|---------|
-| **Fedora** | `sudo dnf install R` | Baixar `.rpm` em [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/) |
-| **Ubuntu** | `sudo apt install r-base` | Baixar `.deb` no mesmo link |
+| **Fedora** | `sudo dnf install R` | [Download .rpm](https://posit.co/download/rstudio-desktop/) |
+| **Ubuntu** | `sudo apt install r-base` | [Download .deb](https://posit.co/download/rstudio-desktop/) |
 | **macOS** | [CRAN .pkg](https://cran.r-project.org/bin/macosx/) | `brew install --cask rstudio` |
-| **Windows** | [CRAN .exe](https://cran.r-project.org/bin/windows/base/) | Baixar `.exe` no mesmo link |
+| **Windows** | [CRAN .exe](https://cran.r-project.org/bin/windows/base/) | [Download .exe](https://posit.co/download/rstudio-desktop/) |
 
-### ④ Pacotes R necessários (se usar chunks R)
+### Passo 4 — Pacotes R
+
+No console do RStudio:
 
 ```r
 install.packages(c("knitr", "rmarkdown"))
 ```
 
-### ⑤ Estilo bibliográfico ABNT
-
-O formato usa `abntex2-alf` como estilo bibliográfico. Ele já vem com:
-
-- **Fedora:** `sudo dnf install texlive-abntex2`
-- **Ubuntu:** incluso no `texlive-latex-extra`
-- **macOS:** `sudo tlmgr install abntex2`
-- **Windows:** MiKTeX baixa automaticamente sob demanda
-
-### Checklist rápido
+### Verificação rápida
 
 ```bash
-quarto --version        # ≥ 1.6.0
-lualatex --version      # deve funcionar sem erro
-kpsewhich abntex2-alf.bst  # deve retornar um caminho
-fc-list | grep -i libertinus  # deve listar as fontes
+quarto --version          # ≥ 1.6.0
+lualatex --version        # funciona
+kpsewhich abntex2-alf.bst # retorna caminho
+fc-list | grep -i libertinus  # fontes instaladas
 ```
 
 ---
@@ -160,15 +116,16 @@ fc-list | grep -i libertinus  # deve listar as fontes
 ```
 quarto_templates_ptbr/
 ├── _extensions/
-│   └── ppgens-univasf-projeto/    # Extensão para Projeto de Mestrado
-│       ├── _extension.yml         # Definição do formato PDF
-│       └── partials/              # Templates LaTeX
-│           ├── title.tex          # Capa e folha de rosto
-│           └── before-body.tex     # Elementos pré-textuais
-├── templates-universitarios/      # Documentação das regras de cada template
+│   └── ppgens-univasf-projeto/    # Extensão Quarto
+│       ├── _extension.yml
+│       ├── abnt.csl               # Estilo ABNT
+│       └── partials/
+│           ├── title.tex
+│           └── before-body.tex
+├── templates-universitarios/      # Documentação dos templates
 │   └── ppgens-univasf/
 │       └── projeto/
-│           └── README.md          # Especificações ABNT e estrutura
+│           └── README.md
 ├── template.qmd                   # Template de exemplo
 ├── LICENSE
 └── README.md
@@ -180,13 +137,13 @@ quarto_templates_ptbr/
 
 Quer adicionar o template da sua universidade?
 
-1. Faça um fork do repositório
-2. Crie a extensão em `_extensions/universidade-tipo/`
-3. Documente as regras em `templates-universitarios/universidade/tipo/`
-4. Abra um Pull Request
+1. Fork do repositório
+2. Crie `_extensions/sua-universidade-tipo/`
+3. Documente em `templates-universitarios/sua-universidade/tipo/`
+4. Pull Request
 
 ---
 
 ## 📄 Licença
 
-MIT — veja o arquivo [LICENSE](LICENSE).
+MIT — veja [LICENSE](LICENSE).

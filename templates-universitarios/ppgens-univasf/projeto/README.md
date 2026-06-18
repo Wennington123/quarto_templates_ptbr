@@ -7,26 +7,22 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 
 ---
 
-## Setup rápido por sistema operacional
+## Setup rápido
 
-### Fedora
+| SO | Comando |
+|----|---------|
+| **Fedora** | `sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2` |
+| **Ubuntu / Debian** | `sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese fonts-libertinus` |
+| **macOS** | `brew install --cask mactex-no-gui` + `sudo tlmgr install libertinus abntex2` |
+| **Windows** | Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages on the fly". |
+
+Depois:
+
 ```bash
-sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2
+quarto use template Wennington123/quarto_templates_ptbr
 ```
 
-### Ubuntu / Debian
-```bash
-sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese fonts-libertinus
-```
-
-### macOS
-```bash
-brew install --cask mactex-no-gui
-sudo tlmgr install libertinus abntex2
-```
-
-### Windows
-Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages on the fly".
+E edite o `.qmd` no RStudio.
 
 ---
 
@@ -63,13 +59,13 @@ Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages o
 
 ## Formatação
 
-| Elemento              | Especificação                                 |
-|-----------------------|-----------------------------------------------|
-| Fonte                 | Times New Roman 12pt ou Arial 11pt            |
-| Espaçamento           | 1,5                                           |
-| Margens               | Superior 2cm, Esquerda 2cm, Inferior 2cm, Direita 2cm |
-| Numeração de páginas  | Canto superior direito, a partir da Introdução |
-| Tamanho               | Mínimo 15, máximo 25 páginas                  |
+| Elemento | Especificação |
+|----------|---------------|
+| Fonte | Times New Roman 12pt ou Arial 11pt |
+| Espaçamento | 1,5 |
+| Margens | Superior 2cm, Esquerda 2cm, Inferior 2cm, Direita 2cm |
+| Numeração de páginas | Canto superior direito, a partir da Introdução |
+| Tamanho | Mínimo 15, máximo 25 páginas |
 
 ---
 
@@ -78,7 +74,7 @@ Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages o
 - **Formatação geral**: NBR 14724/2023
 - **Citações**: NBR 10520/2023
 - **Referências**: NBR 6023/2018
-- **Estilo bibliográfico**: `abntex2-alf`
+- **Estilo bibliográfico**: `abntex2-alf` + `abnt.csl` (incluso no pacote)
 
 ### Regras de citação
 
@@ -87,9 +83,9 @@ Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages o
 
 ---
 
-## Editor recomendado: RStudio
+## Editor
 
-> Optamos pelo RStudio por acreditarmos ser o ambiente mais eficiente para editar e renderizar documentos Quarto — oferece preview integrado, suporte nativo a chunks R, e unifica toda a pipeline de renderização em um único ambiente.
+Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
 
 ---
 

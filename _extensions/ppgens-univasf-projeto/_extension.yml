@@ -44,3 +44,6 @@ contributes:
       cite-method: natbib
       biblio-style: abntex2-alf
       biblio-title: "REFERÊNCIAS"
+      csl: abnt.csl
+      format-resources:
+        - abnt.csl
