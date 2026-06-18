@@ -7,22 +7,49 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 
 ---
 
-## Setup rápido
+## Instalação
 
-| SO | Comando |
-|----|---------|
-| **Fedora** | `sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2` |
-| **Ubuntu / Debian** | `sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese fonts-libertinus` |
-| **macOS** | `brew install --cask mactex-no-gui` + `sudo tlmgr install libertinus abntex2` |
-| **Windows** | Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages on the fly". |
-
-Depois:
+### Template (trabalho novo)
 
 ```bash
 quarto use template Wennington123/quarto_templates_ptbr
 ```
 
-E edite o `.qmd` no RStudio.
+O Quarto pede um nome para a pasta. Depois abra o `.Rproj` no RStudio — o `.qmd` já vem com o esqueleto completo do projeto de pesquisa.
+
+### Extensão (projeto existente)
+
+```bash
+quarto add Wennington123/quarto_templates_ptbr
+```
+
+Depois defina no YAML:
+
+```yaml
+format: ppgens-univasf-projeto
+```
+
+### Exemplo de cabeçalho
+
+```yaml
+---
+title: "TÍTULO DO PROJETO DE PESQUISA"
+author: "NOME COMPLETO"
+date: "2026"
+format: ppgens-univasf-projeto
+orientador: "Prof. Dr. Nome do Orientador"
+area-concentracao: "Ensino e Práticas de Formação Docente no Semiárido"
+abstract: "Resumo do trabalho..."
+---
+```
+
+### Renderizar
+
+No RStudio, clique em **Render**. Ou no terminal:
+
+```bash
+quarto render documento.qmd --to ppgens-univasf-projeto
+```
 
 ---
 

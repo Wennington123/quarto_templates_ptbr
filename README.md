@@ -13,74 +13,42 @@ Formatos customizados do [Quarto](https://quarto.org) para trabalhos acadêmicos
 |----------|-------------|----------|-----------|-----|
 | [`ppgens-univasf-projeto`](./_extensions/ppgens-univasf-projeto/) | UNIVASF | PPGENS | Projeto de Mestrado | 2026 |
 
+> Consulte o README de cada template em `templates-universitarios/` para instruções específicas de instalação e uso.
+
 ---
 
 ## 🚀 Como usar
 
-Você pode usar este formato de duas maneiras.
+Cada template pode ser usado de duas formas.
 
-### Opção A: template (recomendado para começar um trabalho novo)
+### Opção A: template (trabalho novo)
 
-Cria uma pasta limpa com tudo pronto para editar e renderizar:
-
-1. Abra o terminal no diretório onde quer criar o projeto
-2. Execute:
+Cria uma pasta nova com tudo pronto — o comando está no README do template desejado. No geral:
 
 ```bash
-quarto use template Wennington123/quarto_templates_ptbr
+quarto use template <org>/<repo>
 ```
 
-3. O Quarto vai pedir um nome para a pasta. Digite e pressione Enter
-4. Abra a pasta no RStudio:
+O Quarto pede um nome para a pasta. Depois, abra no RStudio (`File → Open Project`) e edite o `.qmd`.
 
-```
-File → Open Project → selecione o arquivo .Rproj
-```
+### Opção B: extensão (projeto existente)
 
-5. Edite o `.qmd` — o arquivo já vem com o esqueleto completo do template
-
-### Opção B: extensão (para adicionar a um projeto que já existe)
-
-Se você já tem um projeto Quarto em andamento:
-
-1. No terminal, dentro da pasta do seu projeto:
+Adiciona apenas o formato a um projeto que você já tem:
 
 ```bash
-quarto add Wennington123/quarto_templates_ptbr
+quarto add <org>/<repo>
 ```
 
-2. No YAML do seu `.qmd`, defina o formato:
+Depois defina o `format` correspondente no YAML e clique em **Render**.
 
-```yaml
-format: ppgens-univasf-projeto
-```
-
-3. Abra no RStudio, edite e clique em **Render**
-
-> A extensão instala apenas o formato em `_extensions/`. Ela não inclui o template de exemplo (`template.qmd`). Para começar do zero, use a **Opção A**.
-
-> **Dica:** Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
-
-### Exemplo de cabeçalho YAML
-
-```yaml
----
-title: "TÍTULO DO TRABALHO"
-author: "Seu Nome"
-date: "2026"
-format: ppgens-univasf-projeto
-orientador: "Prof. Dr. Nome do Orientador"
-area-concentracao: "Sua área de concentração"
-abstract: "Resumo do trabalho..."
----
-```
+> Usamos o RStudio por ser o ambiente mais eficiente para documentos Quarto — preview integrado, suporte nativo a chunks R e renderização unificada.
 
 ### Renderizar
 
 No RStudio, clique em **Render**. Ou no terminal:
 
 ```bash
-quarto render documento.qmd --to ppgens-univasf-projeto
+quarto render documento.qmd --to <formato>
 ```
 
 ---
@@ -143,18 +111,16 @@ fc-list | grep -i libertinus  # fontes instaladas
 
 ```
 quarto_templates_ptbr/
-├── _extensions/
-│   └── ppgens-univasf-projeto/    # Extensão Quarto
+├── _extensions/                   # Extensões Quarto
+│   └── <universidade>-<tipo>/
 │       ├── _extension.yml
-│       ├── abnt.csl               # Estilo ABNT
+│       ├── abnt.csl
 │       └── partials/
-│           ├── title.tex
-│           └── before-body.tex
-├── templates-universitarios/      # Documentação dos templates
-│   └── ppgens-univasf/
-│       └── projeto/
+├── templates-universitarios/      # Documentação de cada template
+│   └── <universidade>/
+│       └── <tipo>/
 │           └── README.md
-├── template.qmd                   # Template de exemplo
+├── template.qmd
 ├── LICENSE
 └── README.md
 ```
