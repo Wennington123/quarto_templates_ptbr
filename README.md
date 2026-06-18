@@ -76,18 +76,87 @@ quarto render documento.qmd --to ppgens-univasf-projeto
 
 ---
 
-## 📋 Requisitos
+## 📋 Requisitos e Setup por Sistema Operacional
 
-- [Quarto](https://quarto.org/docs/get-started/) ≥ 1.6.0
-- [LuaLaTeX](https://www.latex-project.org/get/) (necessário para output PDF)
-- Fontes Libertinus instaladas no sistema
+### ① Quarto CLI
+
+O Quarto pode ser usado com **qualquer editor** — RStudio, VS Code, Positron, Neovim, ou até no terminal. O `quarto render` é só uma linha de comando.
+
+| SO | Instalação |
+|----|-----------|
+| **Fedora** | Baixar `.rpm` em [quarto.org/docs/get-started](https://quarto.org/docs/get-started/) |
+| **Ubuntu/Debian** | Baixar `.deb` na mesma página |
+| **macOS** | `brew install --cask quarto` |
+| **Windows** | Baixar `.msi` na mesma página |
+
+Verifique:
+```bash
+quarto --version  # deve ser ≥ 1.6.0
+```
+
+### ② LaTeX (LuaLaTeX)
+
+Necessário para gerar PDF. O Quarto usa Pandoc + LuaLaTeX por trás.
+
+#### Fedora
+```bash
+sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2
+```
+
+#### Ubuntu / Debian
+```bash
+sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese
+sudo apt install fonts-libertinus
+```
+
+#### macOS
+```bash
+brew install --cask mactex-no-gui
+# Depois: sudo tlmgr install libertinus abntex2
+```
+
+#### Windows
+Baixar [MiKTeX](https://miktex.org/download) ou [TeX Live](https://tug.org/texlive/windows.html). Durante a instalação, marcar "Install missing packages on the fly".
+
+### ③ R e RStudio (opcional — para análise de dados)
+
+Se seu projeto envolve análises estatísticas com `.qmd`, instale o R:
+
+| SO | Instalação |
+|----|-----------|
+| **Fedora** | `sudo dnf install R` |
+| **Ubuntu** | `sudo apt install r-base` |
+| **macOS** | Baixar [CRAN .pkg](https://cran.r-project.org/bin/macosx/) |
+| **Windows** | Baixar [CRAN .exe](https://cran.r-project.org/bin/windows/base/) |
+
+RStudio é opcional — você pode editar `.qmd` com o editor que preferir:
+- [RStudio Desktop](https://posit.co/download/rstudio-desktop/) (mais amigável pra R)
+- [VS Code](https://code.visualstudio.com/) + extensão [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
+- [Positron](https://github.com/posit-dev/positron)
+- Neovim + [quarto-nvim](https://github.com/quarto-dev/quarto-nvim)
+
+### ④ Pacotes R necessários (se usar chunks R)
+
+```r
+install.packages(c("knitr", "rmarkdown"))
+```
+
+### ⑤ Estilo bibliográfico ABNT
+
+O formato usa `abntex2-alf` como estilo bibliográfico. Ele já vem com:
+
+- **Fedora:** `sudo dnf install texlive-abntex2`
+- **Ubuntu:** incluso no `texlive-latex-extra`
+- **macOS:** `sudo tlmgr install abntex2`
+- **Windows:** MiKTeX baixa automaticamente sob demanda
+
+### Checklist rápido
 
 ```bash
-# Fedora
-sudo dnf install texlive-libertinus
-
-# Ubuntu/Debian
-sudo apt install fonts-libertinus
+quarto --version        # ≥ 1.6.0
+lualatex --version      # deve funcionar sem erro
+kpsewhich abntex2-alf.bst  # deve retornar um caminho
+fc-list | grep -i libertinus  # deve listar as fontes
 ```
 
 ---

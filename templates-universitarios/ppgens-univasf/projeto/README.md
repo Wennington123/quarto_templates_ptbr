@@ -5,6 +5,31 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 > **Última atualização:** 2026, conforme modelo da turma 2026.
 > **Tipo de documento:** Projeto de Pesquisa para avaliação de componente curricular.
 
+---
+
+## Setup rápido por sistema operacional
+
+### Fedora
+```bash
+sudo dnf install texlive-scheme-medium texlive-libertinus texlive-abntex2
+```
+
+### Ubuntu / Debian
+```bash
+sudo apt install texlive-latex-extra texlive-fonts-extra texlive-lang-portuguese fonts-libertinus
+```
+
+### macOS
+```bash
+brew install --cask mactex-no-gui
+sudo tlmgr install libertinus abntex2
+```
+
+### Windows
+Baixar [MiKTeX](https://miktex.org/download). Marcar "Install missing packages on the fly".
+
+---
+
 ## Estrutura do documento
 
 ### Elementos pré-textuais (obrigatórios)
@@ -34,6 +59,8 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 3. **Apêndices** (opcional)
 4. **Anexos** (opcional)
 
+---
+
 ## Formatação
 
 | Elemento              | Especificação                                 |
@@ -44,20 +71,37 @@ Modelo oficial de **Projeto de Pesquisa** do **Programa de Pós-Graduação em E
 | Numeração de páginas  | Canto superior direito, a partir da Introdução |
 | Tamanho               | Mínimo 15, máximo 25 páginas                  |
 
+---
+
 ## Normas ABNT
 
 - **Formatação geral**: NBR 14724/2023
 - **Citações**: NBR 10520/2023
 - **Referências**: NBR 6023/2018
+- **Estilo bibliográfico**: `abntex2-alf`
 
 ### Regras de citação
 
 - Até 3 linhas: entre aspas, no corpo do texto
 - Acima de 3 linhas: recuo de 4cm, fonte 10, sem aspas
 
+---
+
+## Editores compatíveis
+
+O formato é agnóstico ao editor. Você pode editar `.qmd` com:
+
+- **RStudio** — preview integrado, chunks R nativos
+- **VS Code** + [extensão Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto)
+- **Positron** — preview integrado
+- **Neovim** + [quarto-nvim](https://github.com/quarto-dev/quarto-nvim)
+- **Terminal** — editar com qualquer editor, renderizar com `quarto render`
+
+---
+
 ## Observações
 
-- Redação em linguagem acadêmica, impessoal (evitar 1ª pessoa; a menos que seu orientador faça a sugestão de optar pela 3ª pessoa)
+- Redação em linguagem acadêmica, impessoal (evitar 1ª pessoa)
 - Texto contínuo e articulado (exceto objetivos e cronograma)
 - Problema de pesquisa em forma de **pergunta clara e objetiva**
 - Referências em ordem alfabética, sem numeração
