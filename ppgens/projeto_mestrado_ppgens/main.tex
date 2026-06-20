@@ -1,0 +1,689 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  brazilian,
+  12pt,
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+\usepackage{xcolor}
+\usepackage[top=2cm,left=2cm,right=2cm,bottom=2cm]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{Times New Roman}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage{setspace}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{Times New Roman}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+\KOMAoption{captions}{tableheading}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{titling}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\setlength{\parindent}{1.25cm}
+\pagestyle{empty}
+\usepackage{colortbl}
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Índice}
+\else
+  \newcommand\contentsname{Índice}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Lista de Figuras}
+\else
+  \newcommand\listfigurename{Lista de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Lista de Tabelas}
+\else
+  \newcommand\listtablename{Lista de Tabelas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabela}
+\else
+  \newcommand\tablename{Tabela}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listagem}
+\newcommand*\listoflistings{\listof{codelisting}{Lista de Listagens}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdflang={pt-BR},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={blue},
+  urlcolor={blue},
+  pdfcreator={LaTeX via pandoc}}
+
+
+\author{}
+\date{}
+\begin{document}
+
+
+\setstretch{1.5}
+\begin{titlepage}
+    \begin{center}
+        
+        % --- INÍCIO DO BLOCO DAS 3 LOGOS ---
+        \begin{minipage}{\textwidth}
+            \includegraphics[height=2.2cm]{logos/brasao.jpg}
+            \hfill
+            \includegraphics[height=2.2cm]{logos/univasf.png}
+            \hfill
+            \includegraphics[height=2.2cm]{logos/ppgens.jpeg}
+        \end{minipage}
+        % --- FIM DO BLOCO DAS LOGOS ---
+        
+        \vspace{1.5cm}
+        
+        \textbf{UNIVERSIDADE FEDERAL DO VALE DO SÃO FRANCISCO}\\
+        \textbf{PROGRAMA DE PÓS-GRADUAÇÃO EM ENSINO}
+        
+        \vspace{4cm}
+        
+        \textbf{NOME COMPLETO}
+        
+        \vspace{4cm}
+        
+        \textbf{TÍTULO DO PROJETO DE PESQUISA}
+        
+        \vfill
+        
+        \textbf{SENHOR DO BONFIM - BA}\\
+        \textbf{2026}
+    \end{center}
+\end{titlepage}
+
+\clearpage
+
+\begin{titlepage}
+    \begin{center}
+        \textbf{NOME COMPLETO}
+        
+        \vspace{4cm}
+        
+        \textbf{TÍTULO DO PROJETO DE PESQUISA}
+        
+        \vspace{3cm}
+        
+        \begin{flushright}
+            \begin{minipage}{0.5\textwidth}
+                \singlespacing
+                Projeto de Pesquisa apresentado como instrumento de avaliação do componente curricular Fundamentos Teóricos e Metodológicos da Pesquisa ofertado no Programa de Pós-Graduação em Ensino (PPGENS) da Universidade Federal do Vale do São Francisco (UNIVASF).\\
+                \\
+                \textbf{Orientador:} Prof. (a) Dr. (a) XXXXXXXXXXXXXX\\
+                \\
+                \textbf{Área de concentração:} Ensino e Práticas de Formação Docente no Semiárido
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        
+        \textbf{SENHOR DO BONFIM - BA}\\
+        \textbf{2026}
+    \end{center}
+\end{titlepage}
+
+\clearpage
+
+\begin{center}
+\textbf{RESUMO}
+\end{center}
+
+(Apresente sucintamente os objetivos, tipo de estudo, como se dará a
+coleta de dados, citando forma de recrutamento, critérios de inclusão e
+exclusão e/ou outras fontes de coleta de dados, tratamento e análise de
+dados e resultados esperados).
+
+\clearpage
+
+\renewcommand{\contentsname}{\centerline{SUMÁRIO}}
+\tableofcontents
+
+\clearpage
+
+\pagestyle{fancy} \fancyhf{} \fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+\section{INTRODUÇÃO}\label{introduuxe7uxe3o}
+
+O texto da introdução deve ser objetivo, claro, coeso e coerente e
+contendo as seguintes informações a ser avaliadas:
+
+\textbf{Contextualização do objeto de pesquisa}
+
+\begin{itemize}
+\item
+  Apresentar o tema geral da pesquisa.
+\item
+  Explicar por que esse tema é relevante no cenário atual.
+\item
+  Indicar o recorte (o que exatamente será investigado).
+\end{itemize}
+
+\textbf{Justificativa acadêmica}
+
+\begin{itemize}
+\item
+  Mostrar como o estudo contribui para a produção de conhecimento.
+\item
+  Apontar lacunas ou debates existentes na literatura que a pesquisa
+  pode preencher.
+\end{itemize}
+
+\textbf{Justificativa social}
+
+\begin{itemize}
+\item
+  Destacar a importância prática da pesquisa para a sociedade.
+\item
+  Explicar quais grupos, comunidades ou setores podem se beneficiar com
+  os resultados.
+\end{itemize}
+
+\textbf{Problema de pesquisa}
+
+\begin{itemize}
+\item
+  Elaborar a pergunta central que a pesquisa pretende responder.
+\item
+  A pergunta deve ser clara, específica e viável de ser investigada.
+\end{itemize}
+
+\section{OBJETIVOS}\label{objetivos}
+
+\subsection{Objetivo geral}\label{objetivo-geral}
+
+\begin{itemize}
+\item
+  Definir a meta principal do estudo (mais ampla).
+\item
+  Deve estar alinhada diretamente ao problema de pesquisa.
+\end{itemize}
+
+\subsection{Objetivos específicos}\label{objetivos-especuxedficos}
+
+\begin{itemize}
+\tightlist
+\item
+  Listar 3 a 4 objetivos mais detalhados.
+\item
+  Devem indicar etapas ou caminhos que serão percorridos para alcançar o
+  objetivo geral.
+\end{itemize}
+
+\section{REFERENCIAL TEÓRICO}\label{referencial-teuxf3rico}
+
+\textbf{Revisão da literatura}
+
+\begin{itemize}
+\item
+  Apresentar um panorama do que já foi estudado sobre o tema.
+\item
+  Selecionar autores e pesquisas relevantes, sempre com citações diretas
+  ou indiretas conforme as normas da ABNT (NBR 10520/2023).
+\item
+  Evitar resumos soltos: os textos devem ser articulados em forma de
+  discussão.
+\end{itemize}
+
+\textbf{Principais conceitos e teorias}
+
+\begin{itemize}
+\item
+  Definir os conceitos centrais do estudo (explicar como cada autor
+  entende o termo).
+\item
+  Destacar teorias ou abordagens que fundamentam a pesquisa.
+\item
+  Comparar diferentes autores quando houver divergências ou
+  complementaridades.
+\end{itemize}
+
+\textbf{Lacunas e problemas de pesquisa}
+
+\begin{itemize}
+\item
+  Identificar o que ainda não foi suficientemente estudado na área.
+\item
+  Mostrar contradições ou limitações encontradas nas obras consultadas.
+\item
+  Apontar como o seu projeto pode contribuir para preencher essas
+  lacunas.
+\end{itemize}
+
+\section{METODOLOGIA}\label{metodologia}
+
+\textbf{O local de realização da pesquisa}
+
+\begin{itemize}
+\tightlist
+\item
+  detalhamento das instalações, dos serviços, centros, comunidades e
+  instituições nas quais se processarão as várias etapas da pesquisa. Em
+  caso de estudos nacionais ou internacionais multicêntricos, deve ser
+  apresentada lista de centros brasileiros participantes, constando o
+  nome do pesquisador responsável, instituição, Unidade Federativa (UF)
+  a que a instituição pertence e o CEP responsável pelo acompanhamento
+  do estudo em cada um dos centros. Em caso de estudos das Ciências
+  Sociais e Humanas, o pesquisador, quando for o caso, deve descrever o
+  campo da pesquisa, caracterizando-o geográfica, social e/ou
+  culturalmente, conforme o caso;
+\end{itemize}
+
+\textbf{Características da amostra ou população}
+
+\begin{itemize}
+\tightlist
+\item
+  características tais como: tamanho, faixa etária, sexo, cor da
+  pele/raça (classificação do IBGE) e etnia, orientação sexual e
+  identidade de gênero, classes e grupos sociais e outras que sejam
+  pertinentes à descrição da população e que possam, de fato, ser
+  significativas para a análise ética da pesquisa; na ausência da
+  delimitação da população, deve ser apresentada justificativa para a
+  não apresentação da descrição da população. Quando for o caso, deve-se
+  dar especial atenção à apresentação das razões para a utilização de
+  grupos vulneráveis (ver Resolução 466/2012 do CNS os casos que são
+  considerados como participantes vulneráveis);
+\end{itemize}
+
+\textbf{Critérios de inclusão e exclusão dos participantes da pesquisa}
+
+\begin{itemize}
+\tightlist
+\item
+  devem ser apresentados de acordo com as exigências da metodologia a
+  ser utilizada, descrevendo as características necessárias ao sujeito
+  para ser incluído na pesquisa. Obs.: Os critérios de exclusão não são
+  o reverso dos de inclusão, e devem indicar quem será excluído após
+  selecionado. Pesquisas na área de ciências humanas admitem ausência
+  dos critérios na Plataforma.
+\end{itemize}
+
+\textbf{Método a ser utilizado}
+
+\begin{itemize}
+\tightlist
+\item
+  descrição detalhada dos métodos e procedimentos justificados com base
+  em fundamentação científica; a descrição da forma de abordagem ou
+  plano de recrutamento dos possíveis indivíduos participantes, os
+  métodos que afetem diretamente ou indiretamente os participantes da
+  pesquisa, e que possam, de fato, ser significativos para a análise
+  ética;
+\end{itemize}
+
+\textbf{Garantias éticas aos participantes da pesquisa}
+
+\begin{itemize}
+\tightlist
+\item
+  Protocolos específicos da área de ciências humanas que, por sua
+  natureza, possibilitam a revelação da identidade dos seus
+  participantes de pesquisa, poderão estar isentos da obrigatoriedade da
+  garantia de sigilo e confidencialidade, desde que seja devidamente
+  justificado no projeto e garantido que o participante será informado e
+  deve consentir; Obs.: As especificidades éticas das pesquisas com
+  COMITÊ DE ÉTICA EM PESQUISA ENVOLVENDO SERES HUMANOS população
+  indígena, dadas as suas particularidades, são contempladas em
+  Resolução Complementar do Conselho Nacional de Saúde/CNS Nº 304 de 09
+  de Agosto de 2000;
+\end{itemize}
+
+\textbf{Critérios de encerramento ou suspensão de pesquisa}
+
+\begin{itemize}
+\tightlist
+\item
+  devem ser explicitados, quando couber; Resultados do estudo: garantia
+  do pesquisador de que os resultados do estudo serão divulgados para os
+  participantes da pesquisa e instituições onde os dados foram obtidos;
+\end{itemize}
+
+\textbf{Divulgação dos resultados}
+
+\begin{itemize}
+\tightlist
+\item
+  garantia pelo pesquisador de encaminhar os resultados da pesquisa para
+  publicação, com os devidos créditos aos autores.
+\end{itemize}
+
+\textbf{Análise de dados}
+
+\begin{itemize}
+\tightlist
+\item
+  Forma de tratamento (estatístico, quando pertinente) e avaliação dos
+  dados.
+\end{itemize}
+
+\textbf{Riscos e benefícios envolvidos na execução da pesquisa}
+
+\begin{itemize}
+\tightlist
+\item
+  o risco, avaliando sua gradação, e descrevendo as medidas para sua
+  minimização e proteção do participante da pesquisa; as medidas para
+  assegurar os necessários cuidados, no caso de danos aos indivíduos; os
+  possíveis benefícios, diretos ou indiretos, para a população estudada
+  e a sociedade;
+\end{itemize}
+
+\clearpage
+
+\section{ORÇAMENTO}\label{oruxe7amento}
+
+\begin{table}[htbp]
+\centering
+\scriptsize 
+\setlength{\tabcolsep}{3pt} % Reduz o espaço interno das células para a tabela caber na página
+\renewcommand{\arraystretch}{1.5}
+
+\begin{tabular}{|p{1.8cm}|p{2.7cm}|p{1.4cm}|p{1.6cm}|p{1.6cm}|p{2.4cm}|p{2.2cm}|}
+\hline
+\rowcolor[gray]{0.9} 
+\textbf{CATEGORIA} & \textbf{DESCRIÇÃO DO ITEM} & \textbf{QUANT.} & \textbf{VALOR UNIT. (R\$)} & \textbf{VALOR TOTAL (R\$)} & \textbf{RESPONSÁVEL PELO CUSTEIO} & \textbf{OBSERVAÇÕES} \\ \hline
+
+Equipamentos & Notebook para análise de dados & 1 & 4.500,00 & 4.500,00 & Órgão financiador / Pesquisador* & Uso exclusivo da pesquisa \\ \hline
+
+Equipamentos & Gravador digital de áudio & 1 & 450,00 & 450,00 & Pesquisador & Necessário para entrevistas \\ \hline
+
+Material de Consumo & Papel A4 & 5 resmas & 30,00 & 150,00 & Pesquisador & Impressão de instrumentos \\ \hline
+
+Material de Consumo & Canetas, pastas, pranchetas & 10 kits & 25,00 & 250,00 & Pesquisador & Organização de campo \\ \hline
+
+Serviços de Terceiros & Transcrição de entrevistas & 20 horas & 60,00 & 1.200,00 & Órgão financiador / Pesquisador* & Contratação eventual \\ \hline
+
+Serviços de Terceiros & Análise estatística especializada & 1 serviço & 800,00 & 800,00 & Pesquisador & Caso necessário \\ \hline
+
+Diárias e Passagens & Transporte para trabalho de campo & 10 desloc. & 60,00 & 600,00 & Pesquisador & Deslocamentos urbanos \\ \hline
+
+Diárias e Passagens & Viagem intermunicipal para coleta & 2 viagens & 300,00 & 600,00 & Pesquisador & Ônibus ou transporte contratado \\ \hline
+
+Ressarcimento aos Participantes & Transporte dos participantes & Previsão 20 part. & 20,00 & 400,00 & Órgão financiador / Pesquisador* & Conforme necessidade \\ \hline
+
+Ressarcimento aos Participantes & Alimentação para participantes e acompanhantes & 20 kits & 25,00 & 500,00 & Órgão financiador / Pesquisador* & Quando aplicável \\ \hline
+
+Compensação Material & Itens simbólicos (ex.: cartão-presente) & 20 unidades & 30,00 & 600,00 & Órgão financiador / Pesquisador* & Se autorizado pelo Comitê de Ética \\ \hline
+
+Outros Custos & Impressão de relatórios e anexos & 1 lote & 150,00 & 150,00 & Pesquisador & Entrega institucional \\ \hline
+
+\end{tabular}
+\end{table}
+
+\section{CRONOGRAMA}\label{cronograma}
+
+\begin{table}[htbp]
+\centering
+\scriptsize % Fonte menor para garantir que a tabela caiba nas margens
+\setlength{\tabcolsep}{2.5pt} % Colunas dos meses mais justinhas
+\renewcommand{\arraystretch}{1.4} 
+
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\rowcolor[gray]{0.9} 
+\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}\textbf{ETAPAS DA PESQUISA}} & \multicolumn{24}{c|}{\cellcolor[gray]{0.9}\textbf{MESES}} \\ \cline{2-25} 
+\rowcolor[gray]{0.9} 
+\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} \\ \hline
+
+Levantamento bibliográfico & X & X & X &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Revisão teórica e escrita inicial &  &  &  & X & X & X & X &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Elaboração dos instrumentos de coleta &  &  &  &  &  &  &  & X & X & X & X &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Qualificação da dissertação &  &  &  &  &  &  &  &  &  &  &  & X &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Coleta de dados no campo &  &  &  &  &  &  &  &  &  &  & X & X & X &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Organização e sistematização dos dados &  &  &  &  &  &  &  &  &  &  &  &  & X & X & X &  &  &  &  &  &  &  &  &  \\ \hline
+
+Análise dos dados &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X & X & X & X & X &  &  &  &  \\ \hline
+
+Redação das seções da dissertação &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X & X & X & X &  &  \\ \hline
+
+Revisão final e ajustes &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X &  \\ \hline
+
+Depósito e defesa da dissertação &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X \\ \hline
+
+\end{tabular}
+\end{table}
+
+Deve descrever a duração total e as diferentes etapas da pesquisa, com
+compromisso explícito do pesquisador de que a pesquisa somente será
+iniciada a partir da aprovação pelo Sistema CEP-CONEP; As atividades
+devem ser discriminadas mês a mês, especificando o ano. Recomendamos
+especial atenção para que quaisquer etapas de coleta estejam
+adequadamente previstas, pois nenhuma pesquisa pode INICIAR antes da
+APROVAÇÃO pelo comitê de ética. Obs.: Os comitês de ética NÃO SÃO
+AUTORIZADOS A ANALISAR pesquisas cujas coletas de dados já foram
+iniciadas. Solicita-se a inclusão do termo ``A pesquisa somente terá
+início após aprovação do CEP''.
+
+\clearpage
+
+\section{REFERÊNCIAS}\label{referuxeancias}
+
+\protect\phantomsection\label{refs}
+
+\clearpage
+
+\section{GLOSSÁRIO (OPCIONAL)}\label{glossuxe1rio-opcional}
+
+\clearpage
+
+\section{APÊNDICE (S) (OPCIONAL)}\label{apuxeandice-s-opcional}
+
+\clearpage
+
+\section{ANEXO (S) (OPCIONAL)}\label{anexo-s-opcional}
+
+\clearpage
+
+\textbf{ORIENTAÇÕES GERAIS}
+
+\begin{itemize}
+\item
+  O projeto deve ser elaborado seguindo GUIA PARA SUBMISSÃO DE PROJETOS
+  DE PESQUISA ENVOLVENDO SERES HUMANOS do Comitê de Ética em Pesquisa
+  Envolvendo Seres Humanos da UNIVASF.
+\item
+  O projeto deve ter no mínimo 15 páginas e no máximo 25 páginas,
+  incluindo elementos pré-textuais, textuais e pós-textuais.
+\item
+  O texto deve ser redigido em linguagem acadêmica, com clareza,
+  objetividade e correção gramatical.
+\item
+  Utilizar normas da ABNT (NBR 14724/2023 para formatação, NBR
+  10520/2023 para citações e NBR 6023/2018 para referências).
+\item
+  O trabalho deve ser digitado em fonte Times New Roman, tamanho 12 ou
+  Arial, tamanho 11, espaço 1,5.
+\item
+  As margens devem seguir o padrão: superior e esquerda 2 cm; inferior e
+  direita 2 cm.
+\item
+  As páginas devem ser numeradas no canto superior direito, a partir da
+  introdução.
+\item
+  O projeto deve conter obrigatoriamente: capa, folha de rosto, sumário,
+  introdução, referencial teórico, metodologia, cronograma, referências.
+\item
+  A introdução deve apresentar contextualização, justificativa,
+  problema, objetivos geral e específicos.
+\item
+  O referencial teórico deve conter revisão da literatura com autores
+  relevantes, sempre com citações diretas ou indiretas devidamente
+  referenciadas.
+\item
+  A metodologia deve descrever claramente a abordagem (qualitativa,
+  quantitativa ou mista), instrumentos, análise dos dados e cronograma.
+\item
+  O cronograma deve ser organizado considerando os 24 meses do mestrado.
+\item
+  O texto não deve conter listas ou tópicos no corpo principal, mas sim
+  redação contínua e articulada (exceto em seções específicas como
+  objetivos ou cronograma).
+\item
+  O problema de pesquisa deve ser expresso em forma de pergunta clara e
+  objetiva.
+\item
+  O objetivo geral deve estar alinhado diretamente ao problema; os
+  objetivos específicos devem detalhar os passos da investigação.
+\item
+  As citações devem ser feitas corretamente: até 3 linhas entre aspas,
+  acima de 3 linhas em recuo de 4 cm, fonte 10, sem aspas.
+\item
+  As referências devem estar em ordem alfabética, sem numeração, e
+  conter apenas as obras efetivamente citadas no texto.
+\item
+  O estilo do texto deve prezar pela coesão e coerência, evitando
+  repetições e redundâncias.
+\item
+  Evitar o uso de primeira pessoa (``eu'', ``nós''); preferir a forma
+  impessoal e objetiva.
+\item
+  Revisar ortografia, concordância e normas técnicas antes da entrega.
+\item
+  O projeto deve ser entregue em formato PDF e dentro do prazo
+  estipulado.
+\end{itemize}
+
+
+
+
+\end{document}

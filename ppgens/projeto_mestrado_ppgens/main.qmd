@@ -1,0 +1,369 @@
+---
+lang: pt-BR
+bibliography: references.bib
+csl: associacao-brasileira-de-normas-tecnicas.csl
+link-citations: true
+colorlinks: true
+linkcolor: blue
+citecolor: blue
+urlcolor: blue
+format:
+  pdf:
+    pdf-engine: lualatex
+    latex-auto-install: true
+    geometry:
+      - top=2cm
+      - left=2cm
+      - right=2cm
+      - bottom=2cm
+    fontsize: 12pt
+    linestretch: 1.5
+    number-sections: false
+    keep-tex: true
+    mainfont: "Times New Roman"
+    header-includes:
+      - \usepackage{graphicx}
+      - \usepackage{setspace}
+      - \usepackage{titling}
+      - \usepackage{indentfirst}
+      - \usepackage{fancyhdr}
+      - \setlength{\parindent}{1.25cm}
+      - \pagestyle{empty}
+      - \usepackage{colortbl}
+---
+
+\begin{titlepage}
+    \begin{center}
+        
+        % --- INÍCIO DO BLOCO DAS 3 LOGOS ---
+        \begin{minipage}{\textwidth}
+            \includegraphics[height=2.2cm]{logos/brasao.jpg}
+            \hfill
+            \includegraphics[height=2.2cm]{logos/univasf.png}
+            \hfill
+            \includegraphics[height=2.2cm]{logos/ppgens.jpeg}
+        \end{minipage}
+        % --- FIM DO BLOCO DAS LOGOS ---
+        
+        \vspace{1.5cm}
+        
+        \textbf{UNIVERSIDADE FEDERAL DO VALE DO SÃO FRANCISCO}\\
+        \textbf{PROGRAMA DE PÓS-GRADUAÇÃO EM ENSINO}
+        
+        \vspace{4cm}
+        
+        \textbf{NOME COMPLETO}
+        
+        \vspace{4cm}
+        
+        \textbf{TÍTULO DO PROJETO DE PESQUISA}
+        
+        \vfill
+        
+        \textbf{SENHOR DO BONFIM - BA}\\
+        \textbf{2026}
+    \end{center}
+\end{titlepage}
+
+\clearpage
+
+\begin{titlepage}
+    \begin{center}
+        \textbf{NOME COMPLETO}
+        
+        \vspace{4cm}
+        
+        \textbf{TÍTULO DO PROJETO DE PESQUISA}
+        
+        \vspace{3cm}
+        
+        \begin{flushright}
+            \begin{minipage}{0.5\textwidth}
+                \singlespacing
+                Projeto de Pesquisa apresentado como instrumento de avaliação do componente curricular Fundamentos Teóricos e Metodológicos da Pesquisa ofertado no Programa de Pós-Graduação em Ensino (PPGENS) da Universidade Federal do Vale do São Francisco (UNIVASF).\\
+                \\
+                \textbf{Orientador:} Prof. (a) Dr. (a) XXXXXXXXXXXXXX\\
+                \\
+                \textbf{Área de concentração:} Ensino e Práticas de Formação Docente no Semiárido
+            \end{minipage}
+        \end{flushright}
+        
+        \vfill
+        
+        \textbf{SENHOR DO BONFIM - BA}\\
+        \textbf{2026}
+    \end{center}
+\end{titlepage}
+
+\clearpage
+
+\begin{center}
+\textbf{RESUMO}
+\end{center}
+
+(Apresente sucintamente os objetivos, tipo de estudo, como se dará a coleta de dados, citando forma de recrutamento, critérios de inclusão e exclusão e/ou outras fontes de coleta de dados, tratamento e análise de dados e resultados esperados).
+
+\clearpage
+
+\renewcommand{\contentsname}{\centerline{SUMÁRIO}}
+\tableofcontents
+
+\clearpage
+
+\pagestyle{fancy} \fancyhf{} \fancyhead[R]{\thepage} \renewcommand{\headrulewidth}{0pt}
+
+# INTRODUÇÃO
+
+O texto da introdução deve ser objetivo, claro, coeso e coerente e contendo as seguintes informações a ser avaliadas:
+
+**Contextualização do objeto de pesquisa**
+
+- Apresentar o tema geral da pesquisa.
+
+- Explicar por que esse tema é relevante no cenário atual.
+
+- Indicar o recorte (o que exatamente será investigado).
+
+**Justificativa acadêmica**
+
+- Mostrar como o estudo contribui para a produção de conhecimento.
+
+- Apontar lacunas ou debates existentes na literatura que a pesquisa pode preencher.
+
+**Justificativa social**
+
+- Destacar a importância prática da pesquisa para a sociedade.
+
+- Explicar quais grupos, comunidades ou setores podem se beneficiar com os resultados.
+
+**Problema de pesquisa**
+
+- Elaborar a pergunta central que a pesquisa pretende responder.
+
+- A pergunta deve ser clara, específica e viável de ser investigada.
+
+# OBJETIVOS
+
+## Objetivo geral
+
+- Definir a meta principal do estudo (mais ampla).
+
+- Deve estar alinhada diretamente ao problema de pesquisa.
+
+## Objetivos específicos
+
+- Listar 3 a 4 objetivos mais detalhados.
+- Devem indicar etapas ou caminhos que serão percorridos para alcançar o objetivo geral.
+
+# REFERENCIAL TEÓRICO
+
+**Revisão da literatura**
+
+- Apresentar um panorama do que já foi estudado sobre o tema.
+
+- Selecionar autores e pesquisas relevantes, sempre com citações diretas ou indiretas conforme as normas da ABNT (NBR 10520/2023).
+
+- Evitar resumos soltos: os textos devem ser articulados em forma de discussão.
+
+**Principais conceitos e teorias**
+
+- Definir os conceitos centrais do estudo (explicar como cada autor entende o termo).
+
+- Destacar teorias ou abordagens que fundamentam a pesquisa.
+
+- Comparar diferentes autores quando houver divergências ou complementaridades.
+
+**Lacunas e problemas de pesquisa**
+
+- Identificar o que ainda não foi suficientemente estudado na área.
+
+- Mostrar contradições ou limitações encontradas nas obras consultadas.
+
+- Apontar como o seu projeto pode contribuir para preencher essas lacunas.
+
+# METODOLOGIA
+
+**O local de realização da pesquisa**
+
+- detalhamento das instalações, dos serviços, centros, comunidades e instituições nas quais se processarão as várias etapas da pesquisa. Em caso de estudos nacionais ou internacionais multicêntricos, deve ser apresentada lista de centros brasileiros participantes, constando o nome do pesquisador responsável, instituição, Unidade Federativa (UF) a que a instituição pertence e o CEP responsável pelo acompanhamento do estudo em cada um dos centros. Em caso de estudos das Ciências Sociais e Humanas, o pesquisador, quando for o caso, deve descrever o campo da pesquisa, caracterizando-o geográfica, social e/ou culturalmente, conforme o caso;
+
+**Características da amostra ou população**
+
+- características tais como: tamanho, faixa etária, sexo, cor da pele/raça (classificação do IBGE) e etnia, orientação sexual e identidade de gênero, classes e grupos sociais e outras que sejam pertinentes à descrição da população e que possam, de fato, ser significativas para a análise ética da pesquisa; na ausência da delimitação da população, deve ser apresentada justificativa para a não apresentação da descrição da população. Quando for o caso, deve-se dar especial atenção à apresentação das razões para a utilização de grupos vulneráveis (ver Resolução 466/2012 do CNS os casos que são considerados como participantes vulneráveis);
+
+**Critérios de inclusão e exclusão dos participantes da pesquisa**
+
+- devem ser apresentados de acordo com as exigências da metodologia a ser utilizada, descrevendo as características necessárias ao sujeito para ser incluído na pesquisa. Obs.: Os critérios de exclusão não são o reverso dos de inclusão, e devem indicar quem será excluído após selecionado. Pesquisas na área de ciências humanas admitem ausência dos critérios na Plataforma.
+
+**Método a ser utilizado**
+
+- descrição detalhada dos métodos e procedimentos justificados com base em fundamentação científica; a descrição da forma de abordagem ou plano de recrutamento dos possíveis indivíduos participantes, os métodos que afetem diretamente ou indiretamente os participantes da pesquisa, e que possam, de fato, ser significativos para a análise ética;
+
+**Garantias éticas aos participantes da pesquisa**
+
+- Protocolos específicos da área de ciências humanas que, por sua natureza, possibilitam a revelação da identidade dos seus participantes de pesquisa, poderão estar isentos da obrigatoriedade da garantia de sigilo e confidencialidade, desde que seja devidamente justificado no projeto e garantido que o participante será informado e deve consentir; Obs.: As especificidades éticas das pesquisas com COMITÊ DE ÉTICA EM PESQUISA ENVOLVENDO SERES HUMANOS população indígena, dadas as suas particularidades, são contempladas em Resolução Complementar do Conselho Nacional de Saúde/CNS Nº 304 de 09 de Agosto de 2000;
+
+**Critérios de encerramento ou suspensão de pesquisa**
+
+- devem ser explicitados, quando couber; Resultados do estudo: garantia do pesquisador de que os resultados do estudo serão divulgados para os participantes da pesquisa e instituições onde os dados foram obtidos;
+
+**Divulgação dos resultados**
+
+- garantia pelo pesquisador de encaminhar os resultados da pesquisa para publicação, com os devidos créditos aos autores.
+
+**Análise de dados**
+
+- Forma de tratamento (estatístico, quando pertinente) e avaliação dos dados.
+
+**Riscos e benefícios envolvidos na execução da pesquisa**
+
+- o risco, avaliando sua gradação, e descrevendo as medidas para sua minimização e proteção do participante da pesquisa; as medidas para assegurar os necessários cuidados, no caso de danos aos indivíduos; os possíveis benefícios, diretos ou indiretos, para a população estudada e a sociedade;
+
+\clearpage
+
+# ORÇAMENTO
+
+\begin{table}[htbp]
+\centering
+\scriptsize 
+\setlength{\tabcolsep}{3pt} % Reduz o espaço interno das células para a tabela caber na página
+\renewcommand{\arraystretch}{1.5}
+
+\begin{tabular}{|p{1.8cm}|p{2.7cm}|p{1.4cm}|p{1.6cm}|p{1.6cm}|p{2.4cm}|p{2.2cm}|}
+\hline
+\rowcolor[gray]{0.9} 
+\textbf{CATEGORIA} & \textbf{DESCRIÇÃO DO ITEM} & \textbf{QUANT.} & \textbf{VALOR UNIT. (R\$)} & \textbf{VALOR TOTAL (R\$)} & \textbf{RESPONSÁVEL PELO CUSTEIO} & \textbf{OBSERVAÇÕES} \\ \hline
+
+Equipamentos & Notebook para análise de dados & 1 & 4.500,00 & 4.500,00 & Órgão financiador / Pesquisador* & Uso exclusivo da pesquisa \\ \hline
+
+Equipamentos & Gravador digital de áudio & 1 & 450,00 & 450,00 & Pesquisador & Necessário para entrevistas \\ \hline
+
+Material de Consumo & Papel A4 & 5 resmas & 30,00 & 150,00 & Pesquisador & Impressão de instrumentos \\ \hline
+
+Material de Consumo & Canetas, pastas, pranchetas & 10 kits & 25,00 & 250,00 & Pesquisador & Organização de campo \\ \hline
+
+Serviços de Terceiros & Transcrição de entrevistas & 20 horas & 60,00 & 1.200,00 & Órgão financiador / Pesquisador* & Contratação eventual \\ \hline
+
+Serviços de Terceiros & Análise estatística especializada & 1 serviço & 800,00 & 800,00 & Pesquisador & Caso necessário \\ \hline
+
+Diárias e Passagens & Transporte para trabalho de campo & 10 desloc. & 60,00 & 600,00 & Pesquisador & Deslocamentos urbanos \\ \hline
+
+Diárias e Passagens & Viagem intermunicipal para coleta & 2 viagens & 300,00 & 600,00 & Pesquisador & Ônibus ou transporte contratado \\ \hline
+
+Ressarcimento aos Participantes & Transporte dos participantes & Previsão 20 part. & 20,00 & 400,00 & Órgão financiador / Pesquisador* & Conforme necessidade \\ \hline
+
+Ressarcimento aos Participantes & Alimentação para participantes e acompanhantes & 20 kits & 25,00 & 500,00 & Órgão financiador / Pesquisador* & Quando aplicável \\ \hline
+
+Compensação Material & Itens simbólicos (ex.: cartão-presente) & 20 unidades & 30,00 & 600,00 & Órgão financiador / Pesquisador* & Se autorizado pelo Comitê de Ética \\ \hline
+
+Outros Custos & Impressão de relatórios e anexos & 1 lote & 150,00 & 150,00 & Pesquisador & Entrega institucional \\ \hline
+
+\end{tabular}
+\end{table}
+
+Obs: o preenchimento acima é um exemplo que deve ser modificado de acordo a necessidade de cada projeto.
+
+# CRONOGRAMA
+
+\begin{table}[htbp]
+\centering
+\scriptsize % Fonte menor para garantir que a tabela caiba nas margens
+\setlength{\tabcolsep}{2.5pt} % Colunas dos meses mais justinhas
+\renewcommand{\arraystretch}{1.4} 
+
+\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\rowcolor[gray]{0.9} 
+\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}\textbf{ETAPAS DA PESQUISA}} & \multicolumn{24}{c|}{\cellcolor[gray]{0.9}\textbf{MESES}} \\ \cline{2-25} 
+\rowcolor[gray]{0.9} 
+\multicolumn{1}{|c|}{\cellcolor[gray]{0.9}} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13} & \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17} & \textbf{18} & \textbf{19} & \textbf{20} & \textbf{21} & \textbf{22} & \textbf{23} & \textbf{24} \\ \hline
+
+Levantamento bibliográfico & X & X & X &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Revisão teórica e escrita inicial &  &  &  & X & X & X & X &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Elaboração dos instrumentos de coleta &  &  &  &  &  &  &  & X & X & X & X &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Qualificação da dissertação &  &  &  &  &  &  &  &  &  &  &  & X &  &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Coleta de dados no campo &  &  &  &  &  &  &  &  &  &  & X & X & X &  &  &  &  &  &  &  &  &  &  &  \\ \hline
+
+Organização e sistematização dos dados &  &  &  &  &  &  &  &  &  &  &  &  & X & X & X &  &  &  &  &  &  &  &  &  \\ \hline
+
+Análise dos dados &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X & X & X & X & X &  &  &  &  \\ \hline
+
+Redação das seções da dissertação &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X & X & X & X &  &  \\ \hline
+
+Revisão final e ajustes &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X &  \\ \hline
+
+Depósito e defesa da dissertação &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & X \\ \hline
+
+\end{tabular}
+\end{table}
+
+Deve descrever a duração total e as diferentes etapas da pesquisa, com compromisso explícito do pesquisador de que a pesquisa somente será iniciada a partir da aprovação pelo Sistema CEP-CONEP; As atividades devem ser discriminadas mês a mês, especificando o ano. Recomendamos especial atenção para que quaisquer etapas de coleta estejam adequadamente previstas, pois nenhuma pesquisa pode INICIAR antes da APROVAÇÃO pelo comitê de ética. Obs.: Os comitês de ética NÃO SÃO AUTORIZADOS A ANALISAR pesquisas cujas coletas de dados já foram iniciadas. Solicita-se a inclusão do termo “A pesquisa somente terá início após aprovação do CEP".
+
+\clearpage
+
+# REFERÊNCIAS 
+
+::: {#refs}
+:::
+
+\clearpage
+
+# GLOSSÁRIO (OPCIONAL)
+
+\clearpage
+
+# APÊNDICE (S) (OPCIONAL)
+
+\clearpage
+
+# ANEXO (S) (OPCIONAL)
+
+\clearpage
+
+**ORIENTAÇÕES GERAIS**
+
+- O projeto deve ser elaborado seguindo GUIA PARA SUBMISSÃO DE PROJETOS DE PESQUISA ENVOLVENDO SERES HUMANOS do Comitê de Ética em Pesquisa Envolvendo Seres Humanos da UNIVASF.
+
+- O projeto deve ter no mínimo 15 páginas e no máximo 25 páginas, incluindo elementos pré-textuais, textuais e pós-textuais.
+
+- O texto deve ser redigido em linguagem acadêmica, com clareza, objetividade e correção gramatical.
+
+- Utilizar normas da ABNT (NBR 14724/2023 para formatação, NBR 10520/2023 para citações e NBR 6023/2018 para referências).
+
+- O trabalho deve ser digitado em fonte Times New Roman, tamanho 12 ou Arial, tamanho 11, espaço 1,5.
+
+- As margens devem seguir o padrão: superior e esquerda 2 cm; inferior e direita 2 cm.
+
+- As páginas devem ser numeradas no canto superior direito, a partir da introdução.
+
+- O projeto deve conter obrigatoriamente: capa, folha de rosto, sumário, introdução, referencial teórico, metodologia, cronograma, referências.
+
+- A introdução deve apresentar contextualização, justificativa, problema, objetivos geral e específicos.
+
+- O referencial teórico deve conter revisão da literatura com autores relevantes, sempre com citações diretas ou indiretas devidamente referenciadas.
+
+- A metodologia deve descrever claramente a abordagem (qualitativa, quantitativa ou mista), instrumentos, análise dos dados e cronograma.
+
+- O cronograma deve ser organizado considerando os 24 meses do mestrado.
+
+- O texto não deve conter listas ou tópicos no corpo principal, mas sim redação contínua e articulada (exceto em seções específicas como objetivos ou cronograma).
+
+- O problema de pesquisa deve ser expresso em forma de pergunta clara e objetiva.
+
+- O objetivo geral deve estar alinhado diretamente ao problema; os objetivos específicos devem detalhar os passos da investigação.
+
+- As citações devem ser feitas corretamente: até 3 linhas entre aspas, acima de 3 linhas em recuo de 4 cm, fonte 10, sem aspas.
+
+- As referências devem estar em ordem alfabética, sem numeração, e conter apenas as obras efetivamente citadas no texto.
+
+- O estilo do texto deve prezar pela coesão e coerência, evitando repetições e redundâncias.
+
+- Evitar o uso de primeira pessoa (“eu”, “nós”); preferir a forma impessoal e objetiva.
+
+- Revisar ortografia, concordância e normas técnicas antes da entrega.
+
+- O projeto deve ser entregue em formato PDF e dentro do prazo estipulado.
